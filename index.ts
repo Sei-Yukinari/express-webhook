@@ -6,6 +6,12 @@ const PORT = process.env.PORT || 3000
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.get('/', async (_req: Request, res: Response) => {
+    console.log('hello')
+    return res.status(200).send({
+        message: 'Hello World!',
+    })
+})
 app.post('/hook', async (_req: Request, res: Response) => {
     console.log('received webhook',_req.body)
     res.sendStatus(200)
