@@ -13,7 +13,7 @@ app.get('/', async (_req: Request, res: Response) => {
     })
 })
 app.post('/hook', async (_req: Request, res: Response) => {
-    console.log('received webhook',_req.body)
+    console.log('received webhook',JSON.stringify( _req.body))
     res.sendStatus(200)
 })
 
